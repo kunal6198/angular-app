@@ -1,0 +1,22 @@
+<h1 style="margin-top: 100px;margin-left: 70px;">Search Results</h1>
+<div class="container" id="main_data">
+    <div style="margin-bottom:50px;" *ngFor="let movie of movies"><hr>
+            
+        <div><h3>{{movie.title}}<span style="margin:0 10px;" class="glyphicon glyphicon-pencil"></span>{{movie.vote_average}}</h3><br></div>
+          <div class="row">
+            <div class="col-sm-5 col-md-5 col-xs-5 col-lg-5">
+              <img style ="height:350px;display: block; margin-left: auto; margin-right: auto; width: 100%;" src= "https://image.tmdb.org/t/p/w500/{{movie.poster_path}}">
+            </div>
+            <div class="col-sm-7 col-md-7 col-xs-7 col-lg-7">
+              <!--<p>{{movie.overview}}</p>-->
+              <p>Movie Id : {{movie.id}}</p>
+              <p>Original Title : <b>{{movie.original_title}}</b></p>
+              <p>Release Date : {{movie.release_date}}</p>
+              <p>Popularity : {{movie.popularity}}</p>
+              <p>Language : {{movie.original_language}}</p>
+              <p>Vote Count : {{movie.vote_count}}</p>
+              <p><a (click)="onSearchFav(movie)" class="btn btn-default btn-lg showcase-btn" style="background-color: yellow;">Add to Favourites</a></p>
+            </div>
+          </div>
+        </div>
+</div>

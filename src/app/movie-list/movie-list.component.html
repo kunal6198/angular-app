@@ -1,0 +1,42 @@
+<header class="jumbotron" style="background-color: cornsilk; height:600px; margin-bottom:0;padding:0;">
+        <div class="hero-tagg">          
+              <h1 class="lead" style="color: white;"><br>Best Movies</h1>        
+        </div>
+      <!-- jumbotron end-->
+      </header>
+    
+    <!--Movie Details-->
+    <div class="container" id="main_data">
+      <h2> Movie List </h2><hr>
+      <input type="text" id="myInput" [(ngModel)]="search_m" (input)="Search()">
+        <div style="margin-bottom:50px;" *ngFor="let movie of movies"><hr>
+            
+          <div><h3>{{movie.title}}<span style="margin:0 10px;" class="glyphicon glyphicon-pencil"></span>{{movie.vote_average}}</h3><br></div>
+            <div class="row">
+              <div class="col-sm-5 col-md-5 col-xs-5 col-lg-5">
+                <img style ="height:350px;display: block; margin-left: auto; margin-right: auto; width: 100%;" src= "https://image.tmdb.org/t/p/w500/{{movie.poster_path}}">
+              </div>
+              <div class="col-sm-7 col-md-7 col-xs-7 col-lg-7">
+                <!--<p>{{movie.overview}}</p>-->
+                <p>Movie Id : {{movie.id}}</p>
+                <p>Original Title : <b>{{movie.original_title}}</b></p>
+                <p>Release Date : {{movie.release_date}}</p>
+                <p>Popularity : {{movie.popularity}}</p>
+                <p>Language : {{movie.original_language}}</p>
+                <p>Vote Count : {{movie.vote_count}}</p>
+                <p><a (click)="onSelect(movie)" class="btn btn-default btn-lg showcase-btn ">Read More</a></p>
+                <p><a (click)="onFav(movie)" class="btn btn-default btn-lg showcase-btn" style="background-color: yellow;">Add to Favourites</a></p>
+              </div>
+            </div>
+          </div>
+    </div>
+
+
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+    <script src="http://code.jquery.com/jquery.js"></script>
+    <script>window.jQuery || document.write('<script src="includes/js/jquery-1.8.2.min.js"><\/script>')</script>
+    <script src="includes/js/script.js"></script>
+    <script src="bootstrap/js/bootstrap.min.js"></script>
